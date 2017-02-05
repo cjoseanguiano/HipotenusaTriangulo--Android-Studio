@@ -40,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
                 catetoA = editText1.getText().toString();
                 catetoB = editText2.getText().toString();
 
-                if (catetoA.length() == 0 && catetoB.length() == 0) {
-                    textView1.setText("Ingresa valores a calcular");
+                if (catetoA.length() == 0) {
+                    textView1.setText("Ingresa valor cateto A");
+
+                } else if (catetoB.length() == 0) {
+                    textView1.setText("Ingresa valor cateto B");
 
                 } else {
 
