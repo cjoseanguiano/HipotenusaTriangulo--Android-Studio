@@ -15,10 +15,12 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText2;
     private TextView textView1;
     private Button button1;
+    private Button button2;
 
     String catetoA;
     String catetoB;
     String resultado;
+    double SSAD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,31 +32,49 @@ public class MainActivity extends AppCompatActivity {
         editText2 = (EditText) findViewById(R.id.edt2);
         textView1 = (TextView) findViewById(R.id.txt1);
         button1 = (Button) findViewById(R.id.btn1);
-
+        button2 = (Button) findViewById(R.id.btn2);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 catetoA = editText1.getText().toString();
                 catetoB = editText2.getText().toString();
 
-                double A = Double.parseDouble(catetoA);
-                double B = Double.parseDouble(catetoB);
-                double R = Math.sqrt(A * A + B * B);
+                if (catetoA.length() == 0 && catetoB.length() == 0) {
+                    textView1.setText("Ingresa valores a calcular");
 
-                textView1.setText("Valor de Hipotenusa es : " + R);
+                } else {
+
+                    double calculo;
+                    double A = Double.parseDouble(catetoA);
+                    double B = Double.parseDouble(catetoB);
+                    calculo = calcularHipotenusa(A, B);
+                    textView1.setText("Valor de Hipotenusa es : " + calculo);
+                }
+
             }
 
 
         });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                limpiarValores();
+            }
+        });
+
     }
 
     private static double calcularHipotenusa(double valorA, double valorB) {
         double resultado = 0;
-
         resultado = Math.sqrt(valorA * valorA + valorB * valorB);
-
         return resultado;
+    }
+
+    private void limpiarValores() {
+
+        editText1.setText("");
+        editText2.setText("");
+        textView1.setText("");
     }
 }

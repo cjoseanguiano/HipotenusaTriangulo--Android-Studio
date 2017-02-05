@@ -21,8 +21,8 @@
         android:layout_below="@+id/imageA"
         android:layout_margin="10dp"
         android:background="#57EA"
-        android:inputType="numberDecimal"
-        android:hint="Ingresa cateto A" />
+        android:hint="Ingresa cateto A"
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/edt2"
@@ -31,24 +31,46 @@
         android:layout_below="@+id/edt1"
         android:layout_margin="10dp"
         android:background="#57EA"
-        android:inputType="numberDecimal"
-        android:hint="Ingresa cateto B" />
+        android:hint="Ingresa cateto B"
+        android:inputType="numberDecimal" />
     />
 
-    <Button
-        android:id="@+id/btn1"
+    <LinearLayout
+        android:id="@+id/linearLayoutA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edt2"
+        android:layout_below="@+id/edt2"
         android:layout_margin="10dp"
-        android:textAlignment="center"
-        android:text="Calcular" />
+        android:background="@color/colorAccent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edt2"
+            android:layout_margin="10dp"
+            android:text="Calcular"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edt2"
+            android:layout_margin="10dp"
+            android:text="Limpiar"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/txt1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/btn1"
+        android:layout_below="@+id/linearLayoutA"
         android:layout_margin="10dp"
         android:background="#57EA"
         android:padding="10dp"
